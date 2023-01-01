@@ -20,18 +20,14 @@ public class CoverLetter {
 
     private String username;
 
-    private String intro;
-    private String body;
-    private String signOff;
+    private String coverLetterBody;
 
     public CoverLetter() {
     }
 
-    public CoverLetter(String roleName, String companyName, String username, String intro, String body, String signOff) {
+    public CoverLetter(String roleName, String companyName, String username, String coverLetterBody) {
         this.companyName = companyName;
         this.username = username;
-        this.intro = intro;
-        this.body = body;
-        this.signOff = signOff;
+        this.coverLetterBody = coverLetterBody;
     }
 }

@@ -45,7 +45,11 @@ public class CoverLetterServiceImpl implements CoverLetterService {
         // generate sign-off
         String signOff = "Yours sincerely," + System.lineSeparator() + user.getFirstName() + " " + user.getLastName();
 
-        CoverLetter coverLetter = new CoverLetter(roleName, companyName, user.getUsername(), intro, body, signOff);
+        // concatenate
+        String coverLetterBody = intro + System.lineSeparator() + body + System.lineSeparator() + signOff;
+
+        CoverLetter coverLetter = new CoverLetter(roleName, companyName, user.getUsername(), coverLetterBody);
+
         return coverLetter;
     }
 
