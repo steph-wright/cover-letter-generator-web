@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://thymeleaf.org" >
+
+    <head>
+        <title>Cover Letter Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <h1>Cover Letter Generator</h1>
+        <br><br>
+        <a href="./manageSkills">Manage Skills</a> | <a href="./homePage">Home Page</a>
+        <h2>Add Skill</h2>
+        <h3 th:text="${message}"></h3>
+
+    <form method="post" action="./addedSkill">
+        Name of Skill: <input type="text" name="skillName"><br>
+        A sentence or two to evidence this skill: <textarea rows="2" name="explanation"></textarea><br>
+        <input type="submit" value="Add">
+    </form>
+
+
+    </body>
+
+</html>

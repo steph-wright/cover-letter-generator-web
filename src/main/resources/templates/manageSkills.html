@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://thymeleaf.org" >
+
+<head>
+    <title>Cover Letter Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<h1>Cover Letter Generator</h1>
+<br><br>
+<a href="./addSkill">Add New Skill</a>
+<br><br>
+<table border="1">
+<!-- tr: Table Row -->
+<tr>
+    <!-- Table Header -->
+    <th>Skill</th>
+    <th>Explanation</th>
+    <th></th>
+    <th></th>
+</tr>
+<tr th:each="skill : ${skills}">
+    <!-- table data -->
+    <td th:text="${skill.id.skillName}"></td>
+    <td th:text="${skill.explanation}"></td>
+    <td><form action="./edit"><input type="hidden" th:value="*{skill}" name="skill"><input type="submit" value="Edit"></form></td>
+    <td><form action="./delete"><input type="hidden" th:value="*{skill.id}" name="skillId"><input type="submit" value="Delete"></form></td>
+</tr>
+</table>
+
+
+
+</body>
+
+</html>
