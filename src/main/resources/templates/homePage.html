@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://thymeleaf.org" >
+
+    <head>
+        <title>Cover Letter Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+    <h1>Cover Letter Generator</h1>
+    <br><br>
+    <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"> </h2>
+    <a href="./manageSkills">Manage Skills</a><br>
+    <a href="./generate">Generate Cover Letter</a><br>
+    <a href="./viewCoverLetters">View Saved Cover Letters</a><br>
+    <a href="./">Log Out</a>
+
+
+    </body>
+
+</html>
