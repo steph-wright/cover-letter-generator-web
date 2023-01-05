@@ -37,12 +37,19 @@ public class SkillController {
     }
 
     @RequestMapping("/addedSkill")
-    public ModelAndView addedSkillController(HttpSession session, @RequestParam("skillName") String skillName, @RequestParam("explanation") String explanation) {
+    public ModelAndView addedSkillController(HttpSession session, @RequestParam("skillName") String skillName, @RequestParam("type") String type, @RequestParam("explanation") String explanation) {
         ModelAndView mv = new ModelAndView();
         UserDetails user = (UserDetails) session.getAttribute("user");
 
+        boolean isTechnical;
+
+        if (type == "technical")
+            isTechnical = true;
+        else
+            isTechnical = false;
+
         SkillId skillId = new SkillId(user.getUsername(), skillName);
-        Skill newSkill = new Skill(skillId, true, explanation);
+        Skill newSkill = new Skill(skillId, isTechnical, explanation);
 
         Skill addedSkill = skillService.createSkill(newSkill);
         String message = null;
@@ -71,12 +78,19 @@ public class SkillController {
     }
 
     @RequestMapping("/editSkill")
-    public ModelAndView editedSkillController(@RequestParam("skillUser") String username, @RequestParam("skillName") String skillName, @RequestParam("explanation") String explanation, HttpSession session) {
+    public ModelAndView editedSkillController(@RequestParam("skillUser") String username, @RequestParam("skillName") String skillName, @RequestParam("type") String type, @RequestParam("explanation") String explanation, HttpSession session) {
         ModelAndView mv = new ModelAndView();
 
         Skill skill = skillService.readSkill(new SkillId(username, skillName));
 
-        Skill editedSkill = new Skill(skill.getId(), true, explanation);
+        boolean isTechnical;
+
+        if (type == "technical")
+            isTechnical = true;
+        else
+            isTechnical = false;
+
+        Skill editedSkill = new Skill(skill.getId(), isTechnical, explanation);
 
         skillService.updateSkill(editedSkill);
 

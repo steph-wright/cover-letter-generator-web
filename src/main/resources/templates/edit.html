@@ -18,6 +18,11 @@
 
     <form method="post" action="./editSkill">
         Name of Skill: <input type="hidden" th:value="*{skill.id.username}" name="skillUser"><input type="hidden" th:value="*{skill.id.skillName}" name="skillName"><p th:text="${skill.id.skillName}"></p><br>
+        Type of skill:
+        <input type="radio" id="technical" name="type" value="technical">
+        <label for="technical">Technical Skill</label><br>
+        <input type="radio" id="soft" name="type" value="soft">
+        <label for="soft">Soft Skill</label><br>
         A sentence or two to evidence this skill: <textarea rows="2" name="explanation" th:text="${skill.explanation}"></textarea><br>
         <input type="submit" value="Update">
     </form>

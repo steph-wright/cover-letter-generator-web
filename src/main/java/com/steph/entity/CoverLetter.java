@@ -27,7 +27,11 @@ public class CoverLetter {
     private String intro;
     @Lob
     @Column(columnDefinition = "longtext")
-    private String coverLetterBody;
+    private String hardSkills;
+
+    @Lob
+    @Column(columnDefinition = "longtext")
+    private String softSkills;
 
     private String yours = "Yours sincerely, ";
 
@@ -40,12 +44,13 @@ public class CoverLetter {
     public CoverLetter() {
     }
 
-    public CoverLetter(String roleName, String companyName, String username, String intro, String coverLetterBody, String signOff) {
+    public CoverLetter(String roleName, String companyName, String username, String intro, String hardSkills, String softSkills, String signOff) {
         this.roleName = roleName;
         this.companyName = companyName;
         this.username = username;
         this.intro = intro;
-        this.coverLetterBody = coverLetterBody;
+        this.hardSkills = hardSkills;
+        this.softSkills = softSkills;
         this.signOff = signOff;
         LocalDateTime localDateTime = LocalDateTime.now();
         String dateTime = localDateTime.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));

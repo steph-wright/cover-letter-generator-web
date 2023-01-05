@@ -17,7 +17,12 @@
         <h3 th:text="${message}"></h3>
 
     <form method="post" action="./addedSkill">
-        Name of Skill: <input type="text" name="skillName"><br>
+        Name of skill: <input type="text" name="skillName"><br>
+        Type of skill:
+        <input type="radio" id="technical" name="type" value="technical">
+        <label for="technical">Technical Skill</label><br>
+        <input type="radio" id="soft" name="type" value="soft">
+        <label for="soft">Soft Skill</label><br>
         A sentence or two to evidence this skill: <textarea rows="2" name="explanation"></textarea><br>
         <input type="submit" value="Add">
     </form>
