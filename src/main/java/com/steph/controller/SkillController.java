@@ -58,4 +58,57 @@ public class SkillController {
         return mv;
     }
 
+    @RequestMapping("/edit")
+    public ModelAndView editSkillController(@RequestParam("skillUser") String username, @RequestParam("skillName") String skillName) {
+        ModelAndView mv = new ModelAndView();
+
+        Skill skill = skillService.readSkill(new SkillId(username, skillName));
+
+        mv.addObject("skill", skill);
+        mv.setViewName("edit");
+
+        return mv;
+    }
+
+    @RequestMapping("/editSkill")
+    public ModelAndView editedSkillController(@RequestParam("skillUser") String username, @RequestParam("skillName") String skillName, @RequestParam("explanation") String explanation, HttpSession session) {
+        ModelAndView mv = new ModelAndView();
+
+        Skill skill = skillService.readSkill(new SkillId(username, skillName));
+
+        Skill editedSkill = new Skill(skill.getId(), true, explanation);
+
+        skillService.updateSkill(editedSkill);
+
+        String message = "The skill '" + skill.getId().getSkillName() + "' was successfully updated.";
+
+        UserDetails user = (UserDetails) session.getAttribute("user");
+        List<Skill> skills = skillService.findByUsername(user.getUsername());
+
+        mv.addObject("skills", skills);
+        mv.addObject("message", message);
+        mv.setViewName("manageSkills");
+
+        return mv;
+    }
+
+    @RequestMapping("/delete")
+    public ModelAndView deleteSkillController(@RequestParam("skillUser") String username, @RequestParam("skillName") String skillName) {
+        ModelAndView mv = new ModelAndView();
+
+        skillService.deleteSkill(new SkillId(username, skillName));
+
+        List<Skill> skills = skillService.findByUsername(username);
+
+        String message = "Skill '" + skillName + "' was deleted.";
+
+        mv.addObject("skills", skills);
+        mv.addObject("message", message);
+        mv.setViewName("manageSkills");
+
+
+        return mv;
+    }
+
+
 }

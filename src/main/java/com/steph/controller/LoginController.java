@@ -69,5 +69,10 @@ public class LoginController {
         return mv;
     }
 
+    @RequestMapping("/homePage")
+    public ModelAndView homePageController() {
+        return new ModelAndView("homePage");
+    }
+
 
 }
