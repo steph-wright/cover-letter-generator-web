@@ -17,7 +17,7 @@ public interface SkillService {
 
     List<Skill> findByUsername(String username);
 
-    List<Skill> findMatchingByUsername(String username, List<String> personSpec);
+    List<Skill> findMatchingByUsername(String username, String personSpecFull);
 
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -50,11 +51,13 @@ public class SkillServiceImpl implements SkillService {
     }
 
     @Override
-    public List<Skill> findMatchingByUsername(String username, List<String> personSpec) {
+    public List<Skill> findMatchingByUsername(String username, String personSpecFull) {
+
+        List<String> personSpec = List.of(personSpecFull.split(" "));
 
         List<Skill> allSkills = skillDao.findByIdUsername(username);
 
-        List<Skill> matchingSkills = null;
+        List<Skill> matchingSkills = new ArrayList<>();
 
         for (String word: personSpec) {
             for (Skill skill: allSkills) {

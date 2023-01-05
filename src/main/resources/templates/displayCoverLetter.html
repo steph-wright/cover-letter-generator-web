@@ -13,14 +13,14 @@
         <h1>Cover Letter Generator</h1>
         <br><br>
         <a href="./manageSkills">Manage Skills</a> | <a href="./homePage">Home Page</a>
-        <h2>Add Skill</h2>
+        <h2>GENERATE</h2>
         <h3 th:text="${message}"></h3>
 
-    <form method="post" action="./addedSkill">
-        Name of Skill: <input type="text" name="skillName"><br>
-        A sentence or two to evidence this skill: <textarea rows="2" name="explanation"></textarea><br>
-        <input type="submit" value="Add">
-    </form>
+        <p th:text="${coverLetter.open}"></p>
+        <p th:text="${coverLetter.intro}"></p>
+        <p th:text="${coverLetter.coverLetterBody}"></p>
+        <p th:text="${coverLetter.yours}"></p>
+        <p th:text="${coverLetter.signOff}"></p>
 
 
     </body>

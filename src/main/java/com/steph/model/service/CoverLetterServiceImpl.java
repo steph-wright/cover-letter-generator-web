@@ -24,7 +24,7 @@ public class CoverLetterServiceImpl implements CoverLetterService {
     @Override
     public CoverLetter generateCoverLetter(UserDetails user, List<Skill> matchingSkills, String roleName, String companyName) {
         // generate intro
-        String intro = "To whom it may concern," +  System.lineSeparator() + "I was so excited to see the role of " + roleName +
+        String intro = "I was so excited to see the role of " + roleName +
                 " advertised with " + companyName + ". Your company values have resonated with me and I hope you will consider my application.";
 
         // generate body
@@ -43,12 +43,10 @@ public class CoverLetterServiceImpl implements CoverLetterService {
         }
 
         // generate sign-off
-        String signOff = "Yours sincerely," + System.lineSeparator() + user.getFirstName() + " " + user.getLastName();
+        String signOff = user.getFirstName() + " " + user.getLastName();
 
-        // concatenate
-        String coverLetterBody = intro + System.lineSeparator() + body + System.lineSeparator() + signOff;
 
-        CoverLetter coverLetter = new CoverLetter(roleName, companyName, user.getUsername(), coverLetterBody);
+        CoverLetter coverLetter = new CoverLetter(roleName, companyName, user.getUsername(), intro, body, signOff);
 
         return coverLetter;
     }

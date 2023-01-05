@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://thymeleaf.org" >
+
+    <head>
+        <title>Cover Letter Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <h1>Cover Letter Generator</h1>
+        <br><br>
+        <a href="./manageSkills">Manage Skills</a> | <a href="./homePage">Home Page</a>
+        <h2>View Cover Letters</h2>
+        <h3 th:text="${message}"></h3>
+
+        <table border="1">
+            <!-- tr: Table Row -->
+            <tr>
+                <!-- Table Header -->
+                <th>Role</th>
+                <th>Company</th>
+                <th>Date Created</th>
+                <th>Cover Letter</th>
+            </tr>
+            <tr th:each="coverLetter : ${coverLetters}">
+                <!-- table data -->
+                <td th:text="${coverLetter.roleName}"></td>
+                <td th:text="${coverLetter.companyName}"></td>
+                <td th:text="${coverLetter.dateCreated}"></td>
+                <td><p th:text="${coverLetter.open}"></p>
+                    <p th:text="${coverLetter.intro}"></p>
+                    <p th:text="${coverLetter.coverLetterBody}"></p>
+                    <p th:text="${coverLetter.yours}"></p>
+                    <p th:text="${coverLetter.signOff}"></p></td>
+            </tr>
+        </table>
+
+
+    </body>
+
+</html>
