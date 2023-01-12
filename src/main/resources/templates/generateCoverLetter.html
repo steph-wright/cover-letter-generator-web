@@ -6,22 +6,34 @@
         <title>Cover Letter Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-        <h1>Cover Letter Generator</h1>
-        <br><br>
-        <a href="./manageSkills">Manage Skills</a> | <a href="./homePage">Home Page</a>
-        <h2>GENERATE</h2>
-        <h3 th:text="${message}"></h3>
+        <header>
+            <h1>Cover Letter Generator</h1>
+        </header>
+        <header class="subheading">
+            <h2>GENERATE</h2>
+        </header>
 
-    <form method="post" action="./displayCoverLetter">
-        Role: <input type="text" name="roleName"><br>
-        Company: <input type="text" name="companyName"><br>
-        Person Specification: <textarea rows="10" name="personSpec"></textarea>
-        <input type="submit" value="GENERATE">
-    </form>
+        <div class="message">
+            <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"></h2>
+            <h3 th:text="${message}"></h3>
+        </div>
+        <div class="main-content">
+            <nav>   
+                <a href="./manageSkills"><button>Manage Skills</button></a>
+                <a href="./homePage"><button>Home Page</button></a>
+            </nav>
+
+            <form class="standard-form" method="post" action="./displayCoverLetter">
+                <label>Role: </label><br><input class="text-input" type="text" name="roleName" required><br><br>
+                <label>Company: </label><br><input class="text-input" type="text" name="companyName" required><br><br>
+                <label>Person Specification: </label><br><textarea class="text-input" rows="10" name="personSpec" required></textarea><br>
+                <input class="button" type="submit" value="GENERATE">
+            </form>
+        </div>
 
 
     </body>

@@ -6,27 +6,41 @@
         <title>Cover Letter Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-        <h1>Cover Letter Generator</h1>
-        <br><br>
-        <a href="./manageSkills">Manage Skills</a> | <a href="./homePage">Home Page</a>
-        <h2>Add Skill</h2>
-        <h3 th:text="${message}"></h3>
+        <header>
+            <h1>Cover Letter Generator</h1>
+        </header>
+        <header class="subheading">
+            <h2>Add Skill</h2>
+        </header>
+        
+        <div class="message">
+            <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"></h2>
+            <h3 th:text="${message}"></h3>
+        </div>
 
-    <form method="post" action="./addedSkill">
-        Name of skill: <input type="text" name="skillName"><br>
-        Type of skill:
-        <input type="radio" id="technical" name="type" value="technical">
-        <label for="technical">Technical Skill</label><br>
-        <input type="radio" id="soft" name="type" value="soft">
-        <label for="soft">Soft Skill</label><br>
-        A sentence or two to evidence this skill: <textarea rows="2" name="explanation"></textarea><br>
-        <input type="submit" value="Add">
-    </form>
+        <div class="main-content">
 
+            <a href="./manageSkills"><button>Manage Skills</button></a>
+            <a href="./homePage"><button>Home Page</button></a>
+        
+
+            <form class="standard-form" method="post" action="./addedSkill">
+                <label for="skillName">Name of skill: <br><input id="skillName" class="text-input" type="text" name="skillName" required></label><br><br>
+                <label>Type of Skill: </label><br><br>
+                    
+                    <label class="container" for="technical">Technical Skill<br><input class="radio" type="radio" id="technical" name="type" value="technical" required><span class="checkmark"></span></label>
+                    
+                    <label class="container" for="soft">Soft Skill<br><input class="radio" type="radio" id="soft" name="type" value="soft" required><span class="checkmark"></span></label><br>
+
+                <label for="explanation">A sentence or two to evidence this skill: <br><textarea id="explanation" class="text-input" rows="5" name="explanation" required></textarea></label><br>
+                <input class="button" type="submit" value="Add">
+            </form>
+
+        </div> 
 
     </body>
 

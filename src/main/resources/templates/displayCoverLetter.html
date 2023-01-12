@@ -6,23 +6,37 @@
         <title>Cover Letter Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-        <h1>Cover Letter Generator</h1>
-        <br><br>
-        <a href="./manageSkills">Manage Skills</a> | <a href="./homePage">Home Page</a>
-        <h2>GENERATE</h2>
-        <h3 th:text="${message}"></h3>
+        <header>
+            <h1>Cover Letter Generator</h1>
+        </header>
+        <header class="subheading">
+            <h2>GENERATE</h2>
+        </header>
+        <div class="message">
+            <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"></h2>
+            <h3 th:text="${message}"></h3>
+        </div>
+        <div class="main-content">
+            <nav>
+                <a href="./manageSkills"><button>Manage Skills</button></a>
+                <a href="./homePage"><button>Home Page</button></a>
+            </nav>
 
-        <p th:text="${coverLetter.open}"></p>
-        <p th:text="${coverLetter.intro}"></p>
-        <p th:text="${coverLetter.hardSkills}"></p>
-        <p th:text="${coverLetter.softSkills}"></p>
-        <p th:text="${coverLetter.yours}"></p>
-        <p th:text="${coverLetter.signOff}"></p>
-
+            <div class="cover-letter">
+                <p th:text="${coverLetter.open}"></p>
+                <p th:text="${coverLetter.intro}"></p>
+                <p th:text="${coverLetter.hardSkills}"></p>
+                <p th:text="${coverLetter.softSkills}"></p>
+                <p th:text="${coverLetter.yours}"></p>
+                <p th:text="${coverLetter.signOff}"></p>
+            </div>
+            
+        </div>
+        
 
     </body>
 

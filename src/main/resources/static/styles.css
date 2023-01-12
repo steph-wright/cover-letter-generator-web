@@ -1,0 +1,216 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    background-color: #202020;
+}
+
+header {
+    text-align: center;
+    width:100%;
+    position: fixed;
+    top: 0;
+    background-color: #313131;
+    color: rgb(196, 196, 196);
+    border: 5px solid #181818;
+}
+
+.subheading {
+    top: 5.5em;
+    background-color: #555555;
+}
+
+
+div {
+    border-radius: 20px;
+}
+
+
+.message {
+    margin: 0 auto 0;
+    height: fit-content;
+    width: 75%;
+    background-color: #5849af;
+    opacity: 0.5;
+    text-align: center;
+    color: #101010;
+
+}
+
+.message h2 {
+    padding-top: 2px;
+}
+
+.main-content {
+    margin: 20px auto;
+    width: calc(75% - 40px);
+    background-color: #7a2f7a; 
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    height: 3em;
+    width: 25%;
+    margin: 10px auto;
+    border: 3px solid #181818;
+    background-color: #5849af;
+}
+
+button:hover {
+    background-color: #7060ce;
+}
+
+a {
+    height: 100%;
+    width: 100%;
+    color: #202020;
+}
+
+div:first-of-type {
+    margin: 150px auto 0;
+}
+
+.button {
+    height: 3em;
+    width: 25%;
+    margin: 10px auto 0;
+    border: 3px solid #181818;
+    background-color: #5849af;
+}
+
+.button:hover {
+    background-color: #7060ce;
+}
+
+.standard-form {
+    margin-top: 20px;
+    background-color: #8a4c8a;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.standard-form label {
+    color: #101010;
+    font-size: 1.2em;
+}
+
+.standard-form .text-input {
+    width: 50%;
+    height: 2em;
+    background-color: #202020;
+    border: 0;
+    color: rgb(196, 196, 196);
+}
+
+.skills {
+    width: 100%;
+    background-color: #8a4c8a;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.skills .button {
+    width: 70px;
+    text-align: center;
+}
+
+.skills .contains-button {
+    width: 75px;
+}
+
+table th {
+    font-size: 1.2em;
+}
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    /* padding-left: 35px; */
+    margin-bottom: 30px; 
+    cursor: pointer;
+    /*font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    /* top: 0; */
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    background-color: #202020;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #444444;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #907dfd;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #202020;
+  }
+
+div[class="cover-letter"] {
+    margin-top: unset;
+}
+
+.cover-letter {
+    padding: 10px;
+    text-align: left;
+    background-color: rgb(224, 224, 224);
+    width: 85%;
+    border-radius: 0;
+    border: 1px  solid rgb(36, 36, 36);
+}
+
+.cover-letter p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.skills .contains-cover-letter {
+    width: 50%;
+}

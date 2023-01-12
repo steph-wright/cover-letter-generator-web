@@ -6,36 +6,48 @@
     <title>Cover Letter Generator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-<h1>Cover Letter Generator</h1><br>
-<h2>Manage Skills</h2>
-<br><br>
-<h3 th:text="${message}"></h3>
-<a href="./homePage">Home Page</a><br>
-<a href="./addSkill">Add New Skill</a>
-<br><br>
-<table border="1">
-<!-- tr: Table Row -->
-<tr>
-    <!-- Table Header -->
-    <th>Skill</th>
-    <th>Explanation</th>
-    <th></th>
-    <th></th>
-</tr>
-<tr th:each="skill : ${skills}">
-    <!-- table data -->
-    <td th:text="${skill.id.skillName}"></td>
-    <td th:text="${skill.explanation}"></td>
-    <td><form action="./edit"><input type="hidden" th:value="*{skill.id.username}" name="skillUser"><input type="hidden" th:value="*{skill.id.skillName}" name="skillName"><input type="submit" value="Edit"></form></td>
-    <td><form action="./delete"><input type="hidden" th:value="*{skill.id.username}" name="skillUser"><input type="hidden" th:value="*{skill.id.skillName}" name="skillName"><input type="submit" value="Delete"></form></td>
-</tr>
-</table>
+    <header>
+        <h1>Cover Letter Generator</h1>
+    </header>
 
+    <header class="subheading">
+        <h2>Manage Skills</h2>
+    </header>
 
+    <div class="message">
+        <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"></h2>
+        <h3 th:text="${message}"></h3>
+    </div>
+    
+    <div class="main-content">
+        <nav>
+            <a href="./homePage"><button>Home Page</button></a>
+            <a href="./addSkill"><button>Add New Skill</button></a>
+        </nav>
+
+        <br><br>
+        <table class="skills">
+            <!-- tr: Table Row -->
+            <tr>
+                <!-- Table Header -->
+                <th>Skill</th>
+                <th>Explanation</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="skill : ${skills}">
+                <!-- table data -->
+                <td th:text="${skill.id.skillName}"></td>
+                <td th:text="${skill.explanation}"></td>
+                <td class="contains-button"><form action="./edit"><input type="hidden" th:value="*{skill.id.username}" name="skillUser"><input type="hidden" th:value="*{skill.id.skillName}" name="skillName"><input class="button" type="submit" value="Edit"></form></td>
+                <td class="contains-button"><form action="./delete"><input type="hidden" th:value="*{skill.id.username}" name="skillUser"><input type="hidden" th:value="*{skill.id.skillName}" name="skillName"><input class="button" type="submit" value="Delete"></form></td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 

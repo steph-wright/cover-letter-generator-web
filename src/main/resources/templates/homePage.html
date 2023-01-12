@@ -6,19 +6,38 @@
         <title>Cover Letter Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-    <h1>Cover Letter Generator</h1>
-    <br><br>
-    <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"> </h2>
-    <a href="./manageSkills">Manage Skills</a><br>
-    <a href="./generate">Generate Cover Letter</a><br>
-    <a href="./viewCoverLetters">View Saved Cover Letters</a><br>
-    <a href="./">Log Out</a>
+        <header>
+            <h1>Cover Letter Generator</h1>
+        </header>
+        <header class="subheading">
+            <h2>Home</h2>
+        </header>
+
+        <div class="message">
+            <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"></h2>
+        </div>
+        <div class="main-content">
+
+            <a href="./manageSkills"><button>Manage Skills</button></a>
+            <br>
+            <a href="./generate"><button>Generate Cover Letter</button></a>
+            <br>
+            <a href="./viewCoverLetters"><button>View Saved Cover Letters</button></a>  
+            <br>
+            <a href="./"><button>Log Out</button></a> 
+
+        </div>
 
 
     </body>
 
 </html>
+
+<!-- Added link tag to CSS
+Added header
+Added message and main-content divs
+Added buttons to links-->

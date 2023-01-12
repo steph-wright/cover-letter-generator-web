@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html xmlns:th="https://thymeleaf.org" >
 
@@ -6,7 +6,7 @@
         <title>Cover Letter Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/home/steph/Desktop/Projects/cover-letter-generator-VIEWS/styles.css">
     </head>
 
     <body>
@@ -27,6 +27,54 @@
         <input type="submit" value="Update">
     </form>
 
+
+    </body>
+
+</html> -->
+
+<!DOCTYPE html>
+
+<html xmlns:th="https://thymeleaf.org" >
+
+    <head>
+        <title>Cover Letter Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Cover Letter Generator</h1>
+        </header>
+        <header class="subheading">
+            <h2>Edit Skill</h2>
+        </header>
+        
+        <div class="message">
+            <h2 th:text="'Welcome ' + ${session.user.firstName} + '!'"></h2>
+            <h3 th:text="${message}"></h3>
+        </div>
+
+        <div class="main-content">
+
+            <a href="./manageSkills"><button>Manage Skills</button></a>
+            <a href="./homePage"><button>Home Page</button></a>
+        
+
+            <form class="standard-form" method="post" action="./editSkill">
+                <label>Name of Skill:<input type="hidden" th:value="*{skill.id.username}" name="skillUser"><input type="hidden" th:value="*{skill.id.skillName}" name="skillName"><p th:text="${skill.id.skillName}"></p></label><br><br>
+                <label>Type of Skill: </label><br><br>
+                    
+                    <label class="container" for="technical">Technical Skill<br><input class="radio" type="radio" id="technical" name="type" value="technical" required><span class="checkmark"></span></label>
+                    
+                    <label class="container" for="soft">Soft Skill<br><input class="radio" type="radio" id="soft" name="type" value="soft" required><span class="checkmark" ></span></label><br>
+
+                <label for="explanation">A sentence or two to evidence this skill: <br><textarea id="explanation" class="text-input" rows="5" name="explanation" th:text="${skill.explanation}" required></textarea></label><br>
+                <input class="button" type="submit" value="Update">
+            </form>
+
+        </div> 
 
     </body>
 

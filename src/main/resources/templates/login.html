@@ -6,19 +6,30 @@
         <title>Cover Letter Generator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <link rel="stylesheet" href="/styles.css">
     </head>
 
     <body>
-        <h1>Cover Letter Generator</h1>
-        <br><br>
-        <a href="./signUp">Sign Up</a><br>
-        <h3 th:text="${message}"></h3>
-    <form method="post" action="./loggedIn">
-        Username: <input type="text" name="username"><br><br>
-        Password: <input type="password" name="password"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <header>
+            <h1>Cover Letter Generator</h1>
+        </header>
+        <header class="subheading">
+            <h2>Log In</h2>
+        </header>
+
+        <div class="message">
+            <h2>Welcome</h2>
+            <h3 th:text="${message}"></h3>
+        </div>
+
+        <div class="main-content">
+            <a href="./signUp"><button>Sign Up</button></a><br>
+            <form class="standard-form" method="post" action="./loggedIn">
+                <label for="username">Username: </label><br><input class="text-input" id="username" type="text" name="username" required><br><br>
+                <label for="username">Password: </label><br><input class="text-input" id="username" type="password" name="password" required><br><br>
+                <input class="button" type="submit" value="Log In">
+            </form>
+        </div>
 
 
     </body>
