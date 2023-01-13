@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #202020;
+    background-color: #202931;
 }
 
 header {
@@ -11,14 +11,14 @@ header {
     width:100%;
     position: fixed;
     top: 0;
-    background-color: #313131;
+    background-color: #161c22;
     color: rgb(196, 196, 196);
     border: 5px solid #181818;
 }
 
 .subheading {
     top: 5.5em;
-    background-color: #555555;
+    background-color: #4e6e70;
 }
 
 
@@ -29,12 +29,13 @@ div {
 
 .message {
     margin: 0 auto 0;
-    height: fit-content;
+    height: 2em;
     width: 75%;
-    background-color: #5849af;
+    max-width: 700px;
+    background-color: rgb(212, 159, 60, 0.5);
     opacity: 0.5;
     text-align: center;
-    color: #101010;
+    color: #202931;
 
 }
 
@@ -45,21 +46,22 @@ div {
 .main-content {
     margin: 20px auto;
     width: calc(75% - 40px);
-    background-color: #7a2f7a; 
+    background-color: #4e6e70;
     text-align: center;
     padding: 20px;
+    max-width: calc(700px - 40px);
 }
 
 button {
     height: 3em;
     width: 25%;
     margin: 10px auto;
-    border: 3px solid #181818;
-    background-color: #5849af;
+    border: 3px solid #202931;
+    background-color: #d49f3c;
 }
 
 button:hover {
-    background-color: #7060ce;
+    background-color: #d45f3c;
 }
 
 a {
@@ -76,17 +78,17 @@ div:first-of-type {
     height: 3em;
     width: 25%;
     margin: 10px auto 0;
-    border: 3px solid #181818;
-    background-color: #5849af;
+    border: 3px solid #202931;
+    background-color: #d49f3c;
 }
 
 .button:hover {
-    background-color: #7060ce;
+    background-color: #d45f3c;
 }
 
 .standard-form {
     margin-top: 20px;
-    background-color: #8a4c8a;
+    background-color: #769597;
     border-radius: 20px;
     padding: 20px;
 }
@@ -99,14 +101,14 @@ div:first-of-type {
 .standard-form .text-input {
     width: 50%;
     height: 2em;
-    background-color: #202020;
+    background-color: #202931;
     border: 0;
     color: rgb(196, 196, 196);
 }
 
 .skills {
     width: 100%;
-    background-color: #8a4c8a;
+    background-color: #769597;
     border-radius: 20px;
     padding: 10px;
 }
@@ -129,7 +131,7 @@ table th {
     display: block;
     position: relative;
     /* padding-left: 35px; */
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
     cursor: pointer;
     /*font-size: 22px; */
     -webkit-user-select: none;
@@ -137,7 +139,7 @@ table th {
     -ms-user-select: none;
     user-select: none;
   }
-  
+
   /* Hide the browser's default radio button */
   .container input {
     position: absolute;
@@ -146,7 +148,7 @@ table th {
     height: 0;
     width: 0;
   }
-  
+
   /* Create a custom radio button */
   .checkmark {
     position: absolute;
@@ -158,32 +160,32 @@ table th {
     text-align: center;
     height: 25px;
     width: 25px;
-    background-color: #202020;
+    background-color: #202931;
     border-radius: 50%;
   }
-  
+
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
     background-color: #444444;
   }
-  
+
   /* When the radio button is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #907dfd;
+    background-color: #d49f3c;
   }
-  
+
   /* Create the indicator (the dot/circle - hidden when not checked) */
   .checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
-  
+
   /* Show the indicator (dot/circle) when checked */
   .container input:checked ~ .checkmark:after {
     display: block;
   }
-  
+
   /* Style the indicator (dot/circle) */
   .container .checkmark:after {
     top: 9px;
@@ -204,7 +206,7 @@ div[class="cover-letter"] {
     background-color: rgb(224, 224, 224);
     width: 85%;
     border-radius: 0;
-    border: 1px  solid rgb(36, 36, 36);
+    border: 1px  solid #202931;
 }
 
 .cover-letter p {
